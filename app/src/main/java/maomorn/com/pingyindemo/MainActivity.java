@@ -46,7 +46,18 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String output=PinyinUtils.getPingYin(input.getText().toString());
+                String inputString=input.getText().toString();
+//                HanyuPinyinOutputFormat format=new HanyuPinyinOutputFormat();
+//                format.setCaseType(HanyuPinyinCaseType.LOWERCASE);
+//                format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+//                format.setVCharType(HanyuPinyinVCharType.WITH_V);
+                String output=PinyinUtils.getPingYin(inputString);
+//                String output="";
+//                try{
+//                    output+=PinyinHelper.toHanYuPinyinString(inputString,format,"",true);
+//                }catch (BadHanyuPinyinOutputFormatCombination e){
+//                    e.printStackTrace();
+//                }
                 content.setText(output);
                 Log.d("TAG",output);
             }
